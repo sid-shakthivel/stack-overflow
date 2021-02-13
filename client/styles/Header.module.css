@@ -1,0 +1,33 @@
+.headerContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border-bottom: 0.5px solid #d6d9dc;
+}
+
+.headerTextContainer {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    align-items: center;
+}
+
+.title {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 300;
+}
+
+.addQuestionButton {
+    padding: 1rem;
+    background-color: #0095ff;
+    color: #ffffff;
+    border: none;
+    border-radius: 2px;
+    outline: 0;
+}
+  
+.addQuestionButton:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}

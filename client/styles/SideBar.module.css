@@ -1,0 +1,33 @@
+.links {
+    float: right;
+    margin-top: 1rem;
+}
+
+.currentLink {
+    background-color: #eff0f1;
+    color: #000000;
+    border-right: 4px #f48123 solid;
+    width: 100% !important;
+    text-align: center;
+    font-size: 1rem;
+    padding: 0.5rem;
+    font-weight: 600;
+}
+
+.link {
+    color: #72787c;
+    width: 100%;
+    font-size: 1rem;
+    padding: 0.5rem;
+    margin-left: 1rem;
+}
+
+.link:hover {
+    cursor: pointer;
+    color: #0d0e0f;
+}
+
+.gap {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}

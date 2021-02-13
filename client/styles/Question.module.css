@@ -1,0 +1,39 @@
+.container {
+  min-height: 100;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr;
+  min-height: 92.5vh;
+  width: 100%;
+}
+
+.footer {
+  width: 100%;
+  height: 25px;
+  border-top: 1px solid #eaeaea;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.annoying {
+  text-align: left;
+  width: 100%;
+}
+
+.annoying2 {
+  border-right: 1px #d6d9dc solid;
+  border-left: 1px #d6d9dc solid;
+}
+
+.answersTextBreak {
+	padding: 1rem;
+}
+
+.answersText {
+	padding-left: 2rem;
+    font-size: 2rem;
+    font-weight: 300;
+}

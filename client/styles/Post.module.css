@@ -1,0 +1,59 @@
+.postContainer {
+    display: grid;
+    grid-template-columns: 1fr 10fr;
+    padding: 1rem;
+    margin: 1rem;
+  }
+  
+.votesContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 0.5rem;
+}
+  
+.votesContainer p {
+	padding: 1px;
+  	color: #6a737c;
+}
+  
+.totalVotesText {
+    font-size: 1.25rem !important;
+}
+
+.upArrow {
+    width: 0;
+    height: 0;
+    border-left: 1rem solid transparent;
+    border-right: 1rem solid transparent;
+    border-bottom: 1rem solid #bbc0c4;
+}
+  
+.downArrow {
+    width: 0;
+    height: 0;
+    border-left: 1rem solid transparent;
+    border-right: 1rem solid transparent;
+    border-top: 1rem solid #bbc0c4;
+}
+
+.upArrow:hover, .downArrow:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.postInformationContainer {
+    display: flex;
+    width: 100%;
+    padding: 0.5rem;
+}
+  
+.postAsker {
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    font-weight: 400;
+    color: #858e96;
+    font-size: 0.75rem;
+}

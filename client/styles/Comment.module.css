@@ -1,0 +1,19 @@
+.comment {
+    font-size: 0.8rem;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    border-bottom: 0.5px solid #d6d9dc;
+    border-top: 0.5px solid #d6d9dc;
+}
+  
+.comment:first-child {
+    border-top: 0.5px solid #d6d9dc;
+}
+
+.button {
+    outline: none;
+    background-color: #fa1414;
+    border: none;
+    color: #ffffff;
+    padding: 0.1rem;
+}

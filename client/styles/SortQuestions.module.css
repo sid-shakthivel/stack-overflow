@@ -1,0 +1,32 @@
+.sortQuestionsContainer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-right: 1rem;
+}
+
+.sortButton, .specialSortButton {
+    border: none;
+    outline: 0;
+    padding: 0.5rem;
+    border-radius: 2px;
+    border: 1px #6a737c solid;
+    margin: 0 1px 0 1px;
+    color: #727982;
+    background-color: #ffffff;
+}
+
+.sortButton:hover {
+    cursor: pointer;
+    background-color: #e3e6e8;
+}
+
+/* .sortButton:first-child {
+    background-color: #e3e6e8;
+} */
+
+.specialSortButton {
+    background-color: #e3e6e8;
+}
+

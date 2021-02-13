@@ -1,0 +1,33 @@
+.addCommentContainer {
+    width: 100%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.addCommentContainer form {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+  
+.addCommentField {
+    font-size: 0.9rem !important;
+    margin: 0.5rem;
+    border: none;
+    outline: none;
+}
+  
+.addCommentButton {
+    background-color: #0095ff;
+    color: #ffffff;
+    border: none;
+    outline: none;
+}
+  
+.addCommentButton:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+
+  

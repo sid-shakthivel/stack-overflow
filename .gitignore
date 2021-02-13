@@ -1,0 +1,17 @@
+.prettierrc
+
+.idea
+
+.vscode
+
+server/.env
+
+server/node_modules
+
+server/package-lock.json
+
+client/.next
+
+client/node_modules
+
+client/package-lock.json

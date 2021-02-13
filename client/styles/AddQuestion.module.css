@@ -1,0 +1,42 @@
+.mainContainer {
+  background-color: #eff0f1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 92.5vh;
+}
+
+.form {
+  background-color: #ffffff;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 2px;
+  box-shadow: #383838 0.5px 0.5px 5px;
+  width: 50vw;
+}
+
+.addQuestionButton {
+  font-size: 1rem;
+  background-color: #0095ff;
+  border: none;
+  outline: none;
+  margin-top: 1rem;
+  padding: 0.75rem;
+  color: #ffffff;
+  border-radius: 2px;
+}
+
+.addQuestionButton:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.form input {
+  font-size: 1rem;
+}
+
+.form h3 {
+  font-size: 1.25rem;
+}
+

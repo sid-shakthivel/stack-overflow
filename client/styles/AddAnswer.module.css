@@ -1,0 +1,33 @@
+.yourAnswerText {
+    margin: 0;
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin-top: 1.5rem;
+  margin-left: 2rem;
+}
+
+.form {
+  margin: 2rem !important;
+}
+
+.form textarea {
+  margin-bottom: 1rem;
+}
+
+.form button {
+  margin-bottom: 1rem;
+}
+
+.addAnswerButton {
+    padding: 1rem;
+    background-color: #0095ff;
+    color: #ffffff;
+    border: none;
+    border-radius: 2px;
+    outline: 0;
+}
+
+.addAnswerButton:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}

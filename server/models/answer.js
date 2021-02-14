@@ -19,6 +19,9 @@ const AnswerSchema = new mongoose.Schema({
                 type: mongoose.Schema.Types.ObjectID,
                 ref: 'User',
             },
+            date: {
+                type: Date,
+            },
         },
     ],
     votes: {
@@ -33,6 +36,9 @@ const AnswerSchema = new mongoose.Schema({
             },
         ],
         totalVotes: Number,
+    },
+    date: {
+        type: Date,
     },
 });
 

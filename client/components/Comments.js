@@ -29,7 +29,7 @@ export default function Comments({ data }) {
                 )}
             </div>
             <div>
-                <AddComment data={data} />
+                <AddComment componentData={data} />
             </div>
         </React.Fragment>
     );

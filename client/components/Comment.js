@@ -6,7 +6,13 @@ export default function Comment({ comment, answer }) {
             <div className={styles.comment}>
                 {comment.message}
                 {' - '}
-                <span style={{ color: '#0477cc' }}>{comment.userId.email}</span>
+                <span style={{ color: '#0477cc' }}>
+                    {comment.userId.username}
+                </span>
+                {'  '}
+                <span style={{ color: '#959ea4' }}>
+                    {comment.date.toString().substring(0, 10)}
+                </span>
                 {/* <form>
                     <button className={styles.button}>Delete</button>
                 </form> */}

@@ -29,7 +29,7 @@ export default function Question({ question }) {
                 <Header question={question} mainPage={false} />
                 <Post post={question} answer={false} />
                 <div className={styles.answersTextBreak}></div>
-                <span className={styles.answersText}>Answers</span>
+                {/* <span className={styles.answersText}>Answers</span> */}
                 <Answers />
                 <AddAnswer question={question} />
             </AnswersContextComponent>

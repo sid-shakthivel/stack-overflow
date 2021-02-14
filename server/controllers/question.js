@@ -19,7 +19,7 @@ exports.getQuestions = async (req, res, next) => {
 
         res.status(200).json({ questions: questions });
     } catch (error) {
-        console.log(error);
+        res.status(400).json({ success: false });
     }
 };
 
@@ -40,9 +40,9 @@ exports.getQuestion = async (req, res, next) => {
             })
             .exec();
 
-        res.json({ question: question });
+        res.status(200).json({ question: question });
     } catch (error) {
-        res.json({});
+        res.status(400).json({ success: false });
     }
 };
 
@@ -65,15 +65,16 @@ exports.postQuestion = async (req, res, next) => {
             date: new Date(),
         });
 
-        res.json({ success: true });
+        res.status(200).json({ success: true });
     } catch (error) {
-        res.json({ errors: handleErrors(error) });
+        res.status(400).json({ errors: handleErrors(error) });
     }
 };
 
 exports.getAnswers = async (req, res, next) => {
+    const query = req.params.query;
     try {
-        const question = await Question.findOne({ _id: req.params.questionId })
+        let answers = await Question.findOne({ _id: req.params.questionId })
             .populate({
                 path: 'answers.answerId',
                 populate: { path: 'userId' },
@@ -84,9 +85,25 @@ exports.getAnswers = async (req, res, next) => {
             })
             .exec();
 
-        res.json({ answers: question.answers });
+        if (query === 'votes') {
+            answers = answers.answers.sort((a, b) => {
+                return (
+                    b.answerId.votes.totalVotes - a.answerId.votes.totalVotes
+                );
+            });
+        } else if (query === 'newest') {
+            answers = answers.answers.sort((a, b) => {
+                return new Date(b.answerId.date) - new Date(a.answerId.date);
+            });
+        } else {
+            answers = answers.answers.sort((a, b) => {
+                return new Date(a.answerId.date) - new Date(b.answerId.date);
+            });
+        }
+
+        res.status(200).json({ answers: answers });
     } catch (error) {
-        console.log(error);
+        res.status(400).json({ success: false });
     }
 };
 
@@ -98,9 +115,9 @@ exports.getComments = async (req, res, next) => {
             .populate('comments.userId')
             .exec();
 
-        res.json({ comments: question.comments });
+        res.status(200).json({ comments: question.comments });
     } catch (error) {
-        console.log(error);
+        res.status(400).json({ success: false });
     }
 };
 
@@ -115,12 +132,13 @@ exports.postComment = async (req, res, next) => {
         question.comments.push({
             message: req.body.comment,
             userId: req.user._id,
+            date: new Date(),
         });
 
         await question.save();
 
-        res.json({ success: true });
+        res.status(200).json({ success: true });
     } catch (error) {
-        res.json({ errors: handleErrors(error) });
+        res.status(400).json({ errors: handleErrors(error) });
     }
 };

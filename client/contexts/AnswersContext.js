@@ -16,9 +16,9 @@ export const useUpdateAnswers = () => {
 export default function AnswersContextComponent({ children, questionId }) {
     const [answers, changeAnswers] = useState({ answers: [] });
 
-    const updateAnswers = async () => {
+    const updateAnswers = async (query) => {
         const response = await requestGetHandler(
-            `/question/answers/${questionId}`
+            `/question/answers/${questionId}/${query}`
         );
         changeAnswers((previousState) => {
             return { ...previousState, answers: response.answers };

@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 import errorHandler from '../helpers/errorHandler';
-import {
-    requestPostHandler,
-} from '../helpers/requestHandler';
+import { requestPostHandler } from '../helpers/requestHandler';
 
 import Comments from '../components/Comments';
 
@@ -85,14 +83,16 @@ export default function Post({ post, answer }) {
                         <span>{post.description}</span>
                     )}
                     <div className={styles.postInformationContainer}>
-                        <div style={{ width: '75%' }}></div>
+                        <div style={{ width: '70%' }}></div>
                         {answer ? (
                             <span className={styles.postAsker}>
-                                Answered By: {post.answerId.userId.email}
+                                Answered By: {post.answerId.userId.email} on{' '}
+                                {post.answerId.date.toString().substring(0, 10)}
                             </span>
                         ) : (
                             <span className={styles.postAsker}>
-                                Asked By: {post.userId.email}
+                                Asked By: {post.userId.email} on{' '}
+                                {post.date.toString().substring(0, 10)}
                             </span>
                         )}
                     </div>

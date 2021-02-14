@@ -1,20 +1,20 @@
 import { useState } from 'react';
 
-import { useUpdateQuestions } from '../contexts/QuestionsContext';
+import { useUpdateAnswers } from '../contexts/AnswersContext';
 
 import styles from '../styles/Sort.module.css';
 
 export default function SortQuestions() {
     const [currentButton, changeCurrentButton] = useState({ button: 'votes' });
 
-    const updateQuestions = useUpdateQuestions();
+    const updateAnswers = useUpdateAnswers();
 
     const onUpdateQuestions = async (e) => {
         const query = e.target.name;
         changeCurrentButton((oldState) => {
             return { ...oldState, button: query };
         });
-        await updateQuestions(`/${query}`);
+        await updateAnswers(`${query}`);
     };
 
     return (

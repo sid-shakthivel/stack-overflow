@@ -35,7 +35,7 @@ router.post(
 
 router.get('/comment/:postId', questionController.getComments);
 
-router.get('/answers/:questionId', questionController.getAnswers);
+router.get('/answers/:questionId/:query', questionController.getAnswers);
 
 router.post(
     '/comment',

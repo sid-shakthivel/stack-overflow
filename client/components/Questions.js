@@ -43,7 +43,10 @@ export default function Questions() {
                         <p>{question.description}</p>
                     </div>
                     <div className={styles.questionFooter}>
-                        <p>Asked By: {question.userId.email}</p>
+                        <p className={styles.questionFooterText}>
+                            Asked By: {question.userId.email} on{' '}
+                            {question.date.toString().substring(0, 10)}
+                        </p>
                     </div>
                 </div>
             ))}

@@ -36,9 +36,9 @@ exports.upVote = async (req, res, next) => {
 
         await post.save();
 
-        res.json({ success: true });
+        res.status(200).json({ success: true });
     } catch (error) {
-        res.json({ success: false });
+        res.status(400).json({ success: false });
     }
 };
 
@@ -78,10 +78,9 @@ exports.downVote = async (req, res, next) => {
 
         await post.save();
 
-        res.json({ success: true });
+        res.status(200).json({ success: true });
     } catch (error) {
-        console.log(error);
-        res.json({ success: false });
+        res.status(400).json({ success: false });
     }
 };
 
@@ -95,9 +94,8 @@ exports.getTotalVotes = async (req, res, next) => {
             post = await Question.findOne({ _id: req.body.postId });
         }
 
-        await res.json({ totalVotes: post.votes.totalVotes });
+        await res.status(200).json({ totalVotes: post.votes.totalVotes });
     } catch (error) {
-        console.log(error);
-        res.json({ success: false });
+        res.status(400).json({ success: false });
     }
 };

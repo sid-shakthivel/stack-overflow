@@ -3,45 +3,49 @@
     grid-template-columns: 1fr 10fr 3fr;
     border-bottom: 0.5px solid #d6d9dc;
     padding: 0.5rem;
-  }
+}
   
-  .quickStats {
+.quickStats {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin-right: 0.5rem;
-  }
+}
   
-  .quickStats p {
+.quickStats p {
     margin: 2px;
     color: #6a737c;
     font-size: 12px;
-  }
+}
   
-  .quickStatsNumbers {
+.quickStatsNumbers {
     font-size: 1.25rem !important;
-  }
+}
   
-  .mainContent span {
+.mainContent span {
     color: #0095ff;
     font-size: 1rem;
-  }
+}
   
-  .mainContent a:hover {
+.mainContent a:hover {
     text-decoration: underline;
     cursor: pointer;
-  }
+}
   
-  .mainContent p {
+.mainContent p {
     font-size: 0.8rem;
-  }
+}
   
-  .questionFooter {
-    height: 100%;
+.questionFooter {
+	height: 100%;
     display: flex;
     align-items: flex-end;
     font-weight: 400;
     color: #858e96;
     font-size: 0.8rem;
-  }
+}
+
+.questionFooterText {
+	width: 75%;
+}

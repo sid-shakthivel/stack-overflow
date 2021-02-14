@@ -4,15 +4,16 @@ import { useUpdateComments } from '../contexts/CommentsContext';
 
 import errorHandler from '../helpers/errorHandler';
 import successHandler from '../helpers/successHandler';
+import { requestPostHandler } from '../helpers/requestHandler';
 
 import styles from '../styles/AddComment.module.css';
 
-export default function AddComponent({ data }) {
-    const { register, handleSubmit } = useForm();
+export default function AddComponent({ componentData }) {
+    const { register, handleSubmit, reset } = useForm();
     const updateComments = useUpdateComments();
 
     const onAddComment = async (data) => {
-        const response = data.answer
+        const response = componentData.answer
             ? await requestPostHandler('/answer/comment', data)
             : await requestPostHandler('/question/comment', data);
 
@@ -20,9 +21,9 @@ export default function AddComponent({ data }) {
     };
 
     const clearUp = async () => {
-        successHandler('Answer Added!');
+        successHandler('Comment Added!');
         reset({});
-        await updateComments();
+        await updateComments(componentData);
     };
 
     return (
@@ -37,7 +38,7 @@ export default function AddComponent({ data }) {
                 <input
                     type="hidden"
                     name="postId"
-                    value={data.postId}
+                    value={componentData.postId}
                     ref={register}
                 />
 

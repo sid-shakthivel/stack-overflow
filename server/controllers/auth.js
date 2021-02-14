@@ -22,9 +22,9 @@ exports.postSignup = async (req, res, next) => {
 
         res.cookie('token', token, { httpOnly: true });
 
-        res.json({ success: true });
+        res.status(200).json({ success: true });
     } catch (error) {
-        res.json({ errors: handleErrors(error) });
+        res.status(400).json({ errors: handleErrors(error) });
     }
 };
 
@@ -40,13 +40,13 @@ exports.postLogin = async (req, res, next) => {
 
         res.cookie('token', token, { httpOnly: true });
 
-        res.json({ success: true });
+        res.status(200).json({ success: true });
     } catch (error) {
-        res.json({ errors: handleErrors(error) });
+        res.status(400).json({ errors: handleErrors(error) });
     }
 };
 
 exports.postLogout = async (req, res, next) => {
     res.cookie('token', '', { maxAge: 0 });
-    res.json({});
+    res.status(200).json({});
 };

@@ -20,9 +20,12 @@ export default function addQuestion() {
     const onSubmit = async (data) => {
         const response = await requestPostHandler('/question', data);
 
-        response.errors
-            ? errorHandler(response.errors)
-            : successHandler(`Question added!`);
+        response.errors ? errorHandler(response.errors) : cleanUp();
+    };
+
+    const cleanUp = () => {
+        successHandler(`Question added!`);
+        window.location.href = '/';
     };
 
     return (
